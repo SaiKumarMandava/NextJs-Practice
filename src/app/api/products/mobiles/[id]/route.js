@@ -1,7 +1,7 @@
 import MobileModel from "@/app/utils/models/mobile";
 import { NextResponse } from "next/server";
 import { dbConnection } from "@/app/utils/config/db";
-import { parseAppSegmentConfig } from "next/dist/build/segment-config/app/app-segment-config";
+
 
 const connectDB = async () => {
   await dbConnection();
@@ -42,5 +42,26 @@ export async function DELETE(req, { params }) {
     });
   } catch (error) {
     return NextResponse.json({ error: "Error while fetching mobile" });
+  }
+}
+
+
+
+
+
+export async function PUT(request,context){
+  
+  try{
+      const {id} = await context.params
+      
+
+      const {title,price,model} = await request.json();
+
+      const mobileData = await MobileModel.findByIdAndUpdate(id,{title,price,model})
+      return NextResponse.json({message:"Mobile data updated successfully",mobileData})
+
+  }catch(error){
+      console.log(error.message)
+      return NextResponse.json({error:"Error while updating mobile"})
   }
 }

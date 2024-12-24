@@ -16,6 +16,11 @@ export default function Header() {
         Blog
       </div>
       </Link>
+      <Link href={'/addProducts/add-mobile'}>
+      <div style={{fontSize:"20px",fontWeight:"bold",color:"white"}}>
+        Products
+      </div>
+      </Link>
     
     </div>
   )

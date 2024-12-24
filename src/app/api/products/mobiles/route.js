@@ -12,7 +12,7 @@ export async function GET(){
     try{
         
     
-   const mobileData = await MobileModel.find();
+   const mobileData = await MobileModel.find().sort({ createdAt: -1 });
     return NextResponse.json({message:"All mobile devices",mobileData})
     }catch(error){
         return NextResponse.json({error:"Error while fetching mobiles"})
@@ -36,5 +36,22 @@ export async function POST(request){
   
 }
 
+
+export async function PUT(request){
+    console.log("request", request)
+    try{
+        const mobileID = await request.nextUrl.searchParams.get('id') 
+        
+
+        const {title,price,model} = await request.json();
+
+        const mobileData = await MobileModel.findByIdAndUpdate(mobileID,{title,price,model})
+        return NextResponse.json({message:"Mobile data updated successfully",mobileData})
+
+    }catch(error){
+        console.log(error.message)
+        return NextResponse.json({error:"Error while updating mobile"})
+    }
+}
 
 
