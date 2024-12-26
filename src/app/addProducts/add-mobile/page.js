@@ -33,7 +33,7 @@ const AddProduct = () => {
     }
 
 
-   console.log("from dot env",process?.env?.NEXT_PUBLIC_URI)
+
 
       
     useEffect(()=>{
