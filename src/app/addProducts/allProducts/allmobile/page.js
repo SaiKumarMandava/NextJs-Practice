@@ -13,7 +13,7 @@ export default function AllMobiles() {
             try{
               const response = await fetch(`${process.env.NEXT_PUBLIC_URI}products/mobiles`,{
                 method: 'GET',
-                mode: 'no-cors',
+                // mode: 'no-cors',
                 headers: {
                   'Content-Type': 'application/json'
                 }
