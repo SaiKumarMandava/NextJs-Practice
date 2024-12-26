@@ -11,7 +11,13 @@ export default function AllMobiles() {
 
         const mobileFetch = async ()=>{
             try{
-              const response = await fetch(`/api/products/mobiles`)
+              const response = await fetch(`${process.env.NEXT_PUBLIC_URI}products/mobiles`,{
+                method: 'GET',
+                mode: 'no-cors',
+                headers: {
+                  'Content-Type': 'application/json'
+                }
+              })
               const data = await response.json()
               setMobileData(data.mobileData)
             }catch(e){
