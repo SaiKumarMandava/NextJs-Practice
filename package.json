@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "vercel",
+  
     "pages:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider npx @cloudflare/next-on-pages"
   },
   "dependencies": {
