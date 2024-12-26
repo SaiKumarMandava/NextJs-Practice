@@ -8,6 +8,8 @@ const connectDB = async () => {
 };
 connectDB();
 
+//kdjfh
+
 export async function GET(req, { params }) {
   console.log(params);
 
