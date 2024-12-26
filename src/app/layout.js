@@ -1,11 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+
 
 import Header from "./header";
 
 
 import './styles/globals.css'
 
-export const runtime = "edge";
 
 export const metadata = {
   title: "Create Next App",
