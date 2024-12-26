@@ -7,13 +7,20 @@ const connectDB = async () =>{
     await dbConnection();
 }
 connectDB();
-
+const setCorsHeaders = (response) => {
+    response.headers.set("Access-Control-Allow-Origin", "*"); // Allow requests from any origin
+    response.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // Allow these HTTP methods
+    response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization"); // Allow specific headers
+    return response;
+};
 export async function GET(){
     try{
         
     
    const mobileData = await MobileModel.find().sort({ createdAt: -1 });
-    return NextResponse.json({message:"All mobile devices",mobileData})
+    // return
+    let response = NextResponse.json({message:"All mobile devices",mobileData})
+    return setCorsHeaders(response);
     }catch(error){
         return NextResponse.json({error:"Error while fetching mobiles"})
     }
