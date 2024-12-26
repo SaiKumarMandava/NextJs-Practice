@@ -18,9 +18,7 @@ export async function GET(){
         
     
    const mobileData = await MobileModel.find().sort({ createdAt: -1 });
-    // return
-    let response = NextResponse.json({message:"All mobile devices",mobileData})
-    return setCorsHeaders(response);
+    return NextResponse.json({message:"All mobile devices",mobileData})
     }catch(error){
         return NextResponse.json({error:"Error while fetching mobiles"})
     }

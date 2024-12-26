@@ -11,7 +11,7 @@ export default function AllMobiles() {
 
         const mobileFetch = async ()=>{
             try{
-              const response = await fetch('http://localhost:3000/api/products/mobiles')
+              const response = await fetch(`${process.env.NEXT_PUBLIC_URI}products/mobiles`)
               const data = await response.json()
               setMobileData(data.mobileData)
             }catch(e){
