@@ -15,7 +15,7 @@ const AddProduct = () => {
     const handleChange = (e) => {
         const {name,value}= e.target
         setProduct({...product, [name]: value })
-    }
+    }       
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -40,7 +40,7 @@ const AddProduct = () => {
 
         const mobileFetch = async ()=>{
             try{
-              const response = await fetch(`${process?.env?.NEXT_PUBLIC_URI}products/mobiles`)
+              const response = await fetch(`/api/products/mobiles`)
               const data = await response.json()
               setMobileData(data.mobileData)
             }catch(e){
@@ -65,7 +65,8 @@ const handleDelete = async(productID)=>{
 }
 
   return (
- <div className='px-4 py-4'>
+    <div className='px-5 py-5'>
+ <div className=''>
      <div>
       <h1 className={`text-gray-600 text-[24px] font-bold`}>
         Add Mobile
@@ -82,7 +83,7 @@ const handleDelete = async(productID)=>{
         value={product.title}
         onChange={handleChange}
         required 
-        className=' border border-red-50 p-2 rounded-md bg-gray-100'
+        className=' border border-red-50 p-2 focus:outline-none rounded-md bg-gray-100'
         placeholder='Enter product name'
         />
        </div>
@@ -98,7 +99,7 @@ const handleDelete = async(productID)=>{
         name="price" 
         value={product.price} 
         onChange={handleChange}
-        className=' border border-red-50 p-2 rounded-md bg-gray-100'
+        className=' border border-red-50 p-2 focus:outline-none rounded-md bg-gray-100'
 placeholder='Enter price'
         
         required 
@@ -118,7 +119,7 @@ placeholder='Enter price'
         name="model" 
         value={product.model} 
         onChange={handleChange}
-        className=' border border-red-50 p-2 rounded-md bg-gray-100'
+        className=' border border-red-50 p-2 focus:outline-none rounded-md bg-gray-100'
         placeholder='Enter model name'
 
 
@@ -201,6 +202,7 @@ placeholder='Enter price'
      </div>
     </div>
     </div>
+ </div>
  </div>
   )
 }

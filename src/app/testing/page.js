@@ -59,13 +59,13 @@ const handleClick =(id)=>{
               
       <table style={{borderCollapse:"collapse",fontFamily:"sans-serif"}}> 
         <thead style={{backgroundColor:"#04AA6D",color:"white",fontWeight:"bold",fontSize:"19px",fontFamily:"sans-serif"}}>
-          <tr >
+          <tr>
             <th style={{border:"1px solid #ddd",padding:"10px",textAlign:"center",width:"100px"}}>ID</th>
             <th style={{border:"1px solid #ddd",padding:"10px",textAlign:"center",width:"150px"}}>Name</th>
             <th style={{border:"1px solid #ddd",padding:"10px",textAlign:"center",width:"100px"}}>Age</th>
             <th style={{border:"1px solid #ddd",padding:"10px",textAlign:"center",width:"100px"}}>Action</th>
           </tr>
-        </thead>
+        </thead>       
         <tbody>
           {testArray?.map((item,index) => (
             <tr key={index}>

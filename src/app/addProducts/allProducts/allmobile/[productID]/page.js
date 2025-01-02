@@ -76,7 +76,7 @@ const router = useRouter()
         value={product.title}
         onChange={handleChange}
         required 
-        className=' border border-red-50 p-2 rounded-md bg-gray-100'
+        className=' border focus:outline-none border-red-50 p-2 rounded-md bg-gray-100'
         placeholder='Enter product name'
         />
        </div>
@@ -92,7 +92,7 @@ const router = useRouter()
         name="price" 
         value={product.price} 
         onChange={handleChange}
-        className=' border border-red-50 p-2 rounded-md bg-gray-100'
+        className=' border border-red-50 focus:outline-none p-2 rounded-md bg-gray-100'
 placeholder='Enter price'
         
         required 
@@ -112,7 +112,7 @@ placeholder='Enter price'
         name="model" 
         value={product.model} 
         onChange={handleChange}
-        className=' border border-red-50 p-2 rounded-md bg-gray-100'
+        className=' border border-red-50 focus:outline-none p-2 rounded-md bg-gray-100'
         placeholder='Enter model name'
 
 
